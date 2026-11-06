@@ -32,7 +32,6 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
     const videos = videoRefs.map((ref) => ref.current).filter((video): video is HTMLVideoElement => Boolean(video));
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const mobile = window.matchMedia("(max-width: 767px)").matches;
 
     videos.forEach((video) => {
       video.pause();
@@ -46,9 +45,9 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
 
     const stageVideos: Record<number, HTMLVideoElement[]> = {
       0: [birdsVideoRef.current].filter((video): video is HTMLVideoElement => Boolean(video)),
-      1: [tigerVideoRef.current, ...(mobile ? [] : [deerVideoRef.current, butterflyVideoRef.current])]
+      1: [tigerVideoRef.current, deerVideoRef.current, butterflyVideoRef.current]
         .filter((video): video is HTMLVideoElement => Boolean(video)),
-      2: [whalesVideoRef.current, ...(mobile ? [] : [reefVideoRef.current, turtleVideoRef.current, dolphinsVideoRef.current])]
+      2: [whalesVideoRef.current, reefVideoRef.current, turtleVideoRef.current, dolphinsVideoRef.current]
         .filter((video): video is HTMLVideoElement => Boolean(video)),
     };
     const activeVideos = stageVideos[currentStage] ?? [];
@@ -96,6 +95,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
             ref={birdsVideoRef}
             data-src="/media/videos/birds_flight.webm"
             poster="/media/images/african_elephant_4k_richer_herd.webp"
+            autoPlay
             loop
             muted
             playsInline
@@ -125,6 +125,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           ref={tigerVideoRef}
           data-src="/media/videos/tiger_forest_1080.mp4"
           poster="/media/images/tiger_forest_1080_poster.jpg"
+          autoPlay
           loop
           muted
           playsInline
@@ -144,6 +145,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
             ref={deerVideoRef}
             data-src="/media/videos/deer_herd_1080.mp4"
             poster="/media/images/deer_herd_1080_poster.jpg"
+            autoPlay
             loop
             muted
             playsInline
@@ -170,6 +172,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
             ref={butterflyVideoRef}
             data-src="/media/videos/butterfly_flutter.webm"
             poster="/media/images/morpho_butterfly.jpg"
+            autoPlay
             loop
             muted
             playsInline
@@ -199,6 +202,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
             ref={whalesVideoRef}
             data-src="/media/videos/humpback_whale_1080.mp4"
             poster="/media/images/humpback_whale_1080_poster.jpg"
+            autoPlay
             loop
             muted
             playsInline
@@ -215,6 +219,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={turtleVideoRef}
             data-src="/media/videos/loggerhead_turtle.webm"
+            autoPlay
             loop
             muted
             playsInline
@@ -228,6 +233,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
             ref={dolphinsVideoRef}
             data-src="/media/videos/dolphin_pod_1080.mp4"
             poster="/media/images/dolphin_pod_1080_poster.jpg"
+            autoPlay
             loop
             muted
             playsInline
@@ -242,6 +248,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
             ref={reefVideoRef}
             data-src="/media/videos/coral_reef_fish.webm"
             poster="/media/images/coral_reef.jpg"
+            autoPlay
             loop
             muted
             playsInline
