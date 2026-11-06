@@ -64,7 +64,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 w-screen h-screen pointer-events-none z-0 overflow-hidden bg-[#02070d]"
+      className="fixed inset-0 h-[100dvh] w-full pointer-events-none z-0 overflow-hidden bg-[#02070d]"
     >
       {/* =========================================================================
           STAGE 0: OPENING — AFRICAN SAVANNA ELEPHANTS (4K MASTER)
