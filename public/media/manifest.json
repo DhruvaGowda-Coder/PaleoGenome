@@ -1,0 +1,508 @@
+[
+  {
+    "target": "public/media/images/african_elephant_4k_richer_herd.png",
+    "title": "Expanded African Savanna Wildlife Hero",
+    "label": "Elephant Herd with Distant Giraffes and Zebras",
+    "source": "AI-edited from the existing African elephant landscape in this project",
+    "license": "AI-generated edit",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/videos/birds_flight.webm",
+    "title": "File:Flying Birds 1 2022-12-05.webm",
+    "label": "Wild Flock Flying in Open Sky (4K, 3.5 seconds)",
+    "license": "CC BY-SA 4.0",
+    "artist": "FASTILY",
+    "source": "https://commons.wikimedia.org/wiki/File:Flying_Birds_1_2022-12-05.webm",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "category": "avian"
+  },
+  {
+    "target": "public/media/videos/tiger_forest_1080.mp4",
+    "title": "Majestic Bengal Tiger Walking in Indian Forest",
+    "label": "Bengal Tiger Walking on a Forest Path (1080p)",
+    "license": "Pexels License (free to use)",
+    "artist": "Bharath Kumar Venkatesh",
+    "source": "https://www.pexels.com/video/majestic-bengal-tiger-walking-in-indian-forest-30214834/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/images/tiger_forest_1080_poster.jpg",
+    "title": "Bengal Tiger Video Poster",
+    "label": "Preview frame for the forest tiger video",
+    "license": "Pexels License (free to use)",
+    "artist": "Bharath Kumar Venkatesh",
+    "source": "https://www.pexels.com/video/majestic-bengal-tiger-walking-in-indian-forest-30214834/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/videos/deer_herd_1080.mp4",
+    "title": "Deer Grazing in the Wild",
+    "label": "Spotted Deer Herd in a Forest (1080p)",
+    "license": "Pexels License (free to use)",
+    "artist": "Jyoti Pur",
+    "source": "https://www.pexels.com/video/deer-grazing-in-the-wild-5037211/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/images/deer_herd_1080_poster.jpg",
+    "title": "Spotted Deer Herd Video Poster",
+    "label": "Preview frame for the forest deer herd video",
+    "license": "Pexels License (free to use)",
+    "artist": "Jyoti Pur",
+    "source": "https://www.pexels.com/video/deer-grazing-in-the-wild-5037211/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/videos/deer_herd_1080.mp4",
+    "title": "Deer Grazing in the Wild",
+    "label": "Spotted Deer Herd in a Forest (1080p)",
+    "license": "Pexels License (free to use)",
+    "artist": "Jyoti Pur",
+    "source": "https://www.pexels.com/video/deer-grazing-in-the-wild-5037211/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/images/deer_herd_1080_poster.jpg",
+    "title": "Spotted Deer Herd Video Poster",
+    "label": "Preview frame for the forest deer herd video",
+    "license": "Pexels License (free to use)",
+    "artist": "Jyoti Pur",
+    "source": "https://www.pexels.com/video/deer-grazing-in-the-wild-5037211/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/videos/humpback_whale_1080.mp4",
+    "title": "Big Animal Swimming Underwater",
+    "label": "Humpback Whale Swimming Underwater (1080p)",
+    "license": "Pexels License (free to use)",
+    "artist": "Sébastien Vincon",
+    "source": "https://www.pexels.com/video/big-animal-swimming-underwater-10377082/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "marine"
+  },
+  {
+    "target": "public/media/videos/dolphin_pod_1080.mp4",
+    "title": "School of Dolphins Swimming Playfully Under the Water",
+    "label": "Wild Dolphin Pod Swimming Underwater (1080p)",
+    "license": "Pexels License (free to use)",
+    "artist": "Daniel Torobekov",
+    "source": "https://www.pexels.com/video/school-of-dolphins-swimming-playfully-under-the-water-5743316/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "marine"
+  },
+  {
+    "target": "public/media/images/dolphin_pod_1080_poster.jpg",
+    "title": "Dolphin Pod Video Poster",
+    "label": "Preview frame for the dolphin pod video",
+    "license": "Pexels License (free to use)",
+    "artist": "Daniel Torobekov",
+    "source": "https://www.pexels.com/video/school-of-dolphins-swimming-playfully-under-the-water-5743316/",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "category": "marine"
+  },
+  {
+    "target": "public/media/videos/whales_underwater.webm",
+    "title": "File:Underwater video of melon-headed whales at Palmyra Atoll.webm",
+    "label": "Whales Swimming in Deep Ocean Water",
+    "species": "Peponocephala electra",
+    "license": "Public Domain (NOAA)",
+    "artist": "NOAA Fisheries / PIFSC",
+    "category": "marine"
+  },
+  {
+    "target": "public/media/videos/loggerhead_turtle.webm",
+    "title": "Loggerhead sea turtle (Caretta caretta)",
+    "label": "Loggerhead Sea Turtle Swimming in Blue Water",
+    "species": "Caretta caretta",
+    "license": "CC BY 3.0",
+    "artist": "Robert Davenport",
+    "source": "https://commons.wikimedia.org/wiki/File:Loggerhead_sea_turtle_(Caretta_caretta).webm",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "category": "marine"
+  },
+  {
+    "target": "public/media/videos/butterfly_flutter.webm",
+    "title": "File:Unidentified butterfly 20190609 175808 release.webm",
+    "label": "Butterfly in Natural Flight",
+    "license": "CC BY-SA 4.0",
+    "artist": "Wikimedia Commons Contributor",
+    "category": "invertebrate"
+  },
+  {
+    "target": "public/media/images/tiger.jpg",
+    "title": "File:Bengal tiger (Panthera tigris tigris) female 3.jpg",
+    "label": "Royal Bengal Tiger",
+    "species": "Panthera tigris tigris",
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/images/african_elephant.jpg",
+    "title": "File:Desert elephant (Loxodonta africana) male.jpg",
+    "label": "African Bush Elephant",
+    "species": "Loxodonta africana",
+    "license": "CC BY-SA / Public Domain",
+    "artist": "Wikimedia Contributor",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/images/blue_whale.jpg",
+    "title": "File:Door breaching.jpg",
+    "label": "Blue Whale Breaching Oceanic Waters",
+    "species": "Balaenoptera musculus",
+    "license": "Public domain",
+    "artist": "Wikimedia Contributor",
+    "category": "marine",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Door_breaching.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/images/red_deer.jpg",
+    "title": "File:RedDeerStag.jpg",
+    "label": "Red Deer Stag in Forest",
+    "species": "Cervus elaphus",
+    "license": "CC BY-SA / Public Domain",
+    "artist": "Wikimedia Contributor",
+    "category": "mammal"
+  },
+  {
+    "target": "public/media/images/tree_frog.jpg",
+    "title": "File:Red-eyed Leaf Frog (Agalychnis callidryas) (9591374287).jpg",
+    "label": "Red-eyed Tree Frog on Raindrop Leaf",
+    "species": "Agalychnis callidryas",
+    "license": "CC BY-SA / Public Domain",
+    "artist": "Wikimedia Contributor",
+    "category": "amphibian"
+  },
+  {
+    "target": "public/media/images/morpho_butterfly.jpg",
+    "title": "File:Morpho peleides 1.jpg",
+    "label": "Blue Morpho Butterfly",
+    "species": "Morpho peleides",
+    "license": "CC BY 3.0",
+    "artist": "Thomas Bresson",
+    "category": "invertebrate",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/Morpho_peleides_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/images/coral_reef.jpg",
+    "title": "File:Great Barrier Reef ESA378130.jpg",
+    "label": "Pristine Great Barrier Reef System",
+    "species": null,
+    "license": "CC BY-SA 3.0 igo",
+    "artist": "European Space Agency",
+    "category": "marine",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Great_Barrier_Reef_ESA378130.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/images/sea_turtle.jpg",
+    "title": "File:Nick (Sea Turtle).jpg",
+    "label": "Green Sea Turtle Grazing Ocean Reef",
+    "species": "Chelonia mydas",
+    "license": "Public domain",
+    "artist": "Bryan Wittal at English Wikipedia",
+    "category": "marine",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Nick_%28Sea_Turtle%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/images/bald_eagle.jpg",
+    "title": "File:Haliaeetus leucocephalus (Linnaeus 1766).jpg",
+    "label": "Bald Eagle Soaring Flight",
+    "species": "Haliaeetus leucocephalus",
+    "license": "CC BY 3.0",
+    "artist": "Michael Gäbler",
+    "category": "avian",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Haliaeetus_leucocephalus_%28Linnaeus_1766%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/mammoth_skeleton.jpg",
+    "title": "File:Mammuthus primigenius Museum of Ancient Life 2.jpg",
+    "label": "Woolly Mammoth Specimen",
+    "species": "Mammuthus primigenius (Extinct ~4,000 BP)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Etemenanki3",
+    "category": "extinct",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Mammuthus_primigenius_Museum_of_Ancient_Life_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/asian_elephant.jpg",
+    "title": "File:Elephas maximus maximus - 01.jpg",
+    "label": "Asian Elephant (Living Sister Taxon)",
+    "species": "Elephas maximus",
+    "license": "CC BY-SA 4.0",
+    "artist": "Carlos Delgado",
+    "category": "living_relative",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Elephas_maximus_maximus_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/thylacine_historical.jpg",
+    "title": "File:Thylacinus cynocephalus at Hobart Zoo 1928.jpg",
+    "label": "Thylacine / Tasmanian Tiger (Historical 1928)",
+    "species": "Thylacinus cynocephalus (Extinct 1936)",
+    "license": "Public domain",
+    "artist": "Harry Burrell",
+    "category": "extinct",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/Thylacinus_cynocephalus_at_Hobart_Zoo_1928.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/tiger_quoll.jpg",
+    "title": "File:Dasyurus maculatus.jpg",
+    "label": "Spotted-tailed Quoll (Dasyurid Relative)",
+    "species": "Dasyurus maculatus",
+    "license": "Public domain",
+    "artist": "Leonard G. (talk)",
+    "category": "living_relative",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Dasyurus_maculatus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/passenger_pigeon.jpg",
+    "title": "File:Pigeon migrateur MHNT.jpg",
+    "label": "Passenger Pigeon Holotype Specimen",
+    "species": "Ectopistes migratorius (Extinct 1914)",
+    "license": "CC BY-SA 3.0",
+    "artist": "Didier Descouens",
+    "category": "extinct",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Pigeon_migrateur_MHNT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/mourning_dove.jpg",
+    "title": "File:Mourning dove perched (61179).jpg",
+    "label": "Mourning Dove (Living Columbid Relative)",
+    "species": "Zenaida macroura",
+    "license": "CC BY-SA 4.0",
+    "artist": "Rhododendrites",
+    "category": "living_relative",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Mourning_dove_perched_%2861179%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/smilodon_skull.jpg",
+    "title": "File:Smilodon fatalis californicus.JPG",
+    "label": "Saber-toothed Cat Fossil Craniometrics",
+    "species": "Smilodon fatalis (Extinct ~10,000 BP)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ghedoghedo",
+    "category": "extinct",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Smilodon_fatalis_californicus.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/clouded_leopard.jpg",
+    "title": "File:Clouded Leopard (205918213).jpeg",
+    "label": "Clouded Leopard (Canine Morphology Relative)",
+    "species": "Neofelis nebulosa",
+    "license": "CC BY-SA 3.0",
+    "artist": "Lee Elvin",
+    "category": "living_relative",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Clouded_Leopard_%28205918213%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/stellers_seacow.jpg",
+    "title": "File:Hydrodamalis gigas skeleton - Finnish Museum of Natural History - DSC04529.JPG",
+    "label": "Steller's Sea Cow Complete Skeleton",
+    "species": "Hydrodamalis gigas (Extinct 1768)",
+    "license": "CC0",
+    "artist": "Daderot",
+    "category": "extinct",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hydrodamalis_gigas_skeleton_-_Finnish_Museum_of_Natural_History_-_DSC04529.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/species/dugong.jpg",
+    "title": "File:Dugong dugon fin egypt.jpg",
+    "label": "Dugong in Marine Seagrass (Sirenia Relative)",
+    "species": "Dugong dugon",
+    "license": "GFDL",
+    "artist": "Sebastian Gerhard Venturemedia",
+    "category": "living_relative",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Dugong_dugon_fin_egypt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/science/dna_electrophoresis.jpg",
+    "title": "File:Gel electrophoresis 2.jpg",
+    "label": "DNA Agarose Gel Fluorescent Ladder Bands",
+    "species": null,
+    "license": "CC BY-SA 3.0",
+    "artist": "Mnolf",
+    "category": "science",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Gel_electrophoresis_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/science/permafrost_core.jpg",
+    "title": "File:Permafrost-core hg.jpg",
+    "label": "Siberian Permafrost Sedimentary Core Matrix",
+    "species": null,
+    "license": "CC BY 3.0",
+    "artist": "Hannes Grobe",
+    "category": "science",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Permafrost-core_hg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/science/ancient_dna_cleanroom.jpg",
+    "title": "File:Neanderthal DNA extraction.jpg",
+    "label": "Ultra-Clean Ancient DNA Extraction Cleanroom",
+    "species": null,
+    "license": "Public domain",
+    "artist": "Max Planck Institute for Evolutionary Anthropology",
+    "category": "science",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Neanderthal_DNA_extraction.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/science/dna_molecular_structure.jpg",
+    "title": "File:DNA double helix (13081113544).jpg",
+    "label": "DNA Double Helix Molecular Topology",
+    "species": null,
+    "license": "CC BY 2.0",
+    "artist": "Genomics Education Programme",
+    "category": "science",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/DNA_double_helix_%2813081113544%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/dodo_skeleton.jpg",
+    "title": "File:Dodo-Skeleton Natural History Museum London England.jpg",
+    "label": "Dodo Skeleton Holotype",
+    "species": "Raphus cucullatus",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct ~1662 (Mauritius)",
+    "license": "CC BY-SA 2.5",
+    "artist": "Heinz-Josef Lücking",
+    "category": "avian",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Dodo-Skeleton_Natural_History_Museum_London_England.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/quagga_specimen.jpg",
+    "title": "File:Equus quagga 3 MHNT.jpg",
+    "label": "Quagga Mounted Specimen",
+    "species": "Equus quagga quagga",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct 1883 (Amsterdam)",
+    "license": "CC BY-SA 3.0",
+    "artist": "Roger Culos",
+    "category": "mammal",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Equus_quagga_3_MHNT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/irish_elk_skeleton.jpg",
+    "title": "File:Megaloceros giganteus Paris 25 05 2013 01.jpg",
+    "label": "Giant Irish Elk Antler Skeleton",
+    "species": "Megaloceros giganteus",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct ~7,700 BP (Late Pleistocene)",
+    "license": "CC0",
+    "artist": "Vassil",
+    "category": "mammal",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Megaloceros_giganteus_Paris_25_05_2013_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/giant_moa_skeleton.jpg",
+    "title": "File:Dinornis robustus, South Island Giant Moa - three quarter view on black YORYM 2004 20.jpg",
+    "label": "South Island Giant Moa Skeleton",
+    "species": "Dinornis robustus",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct ~1440 CE (New Zealand)",
+    "license": "CC BY-SA 4.0",
+    "artist": "York Museums Trust staff",
+    "category": "avian",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Dinornis_robustus%2C_South_Island_Giant_Moa_-_three_quarter_view_on_black_YORYM_2004_20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/great_auk_specimen.jpg",
+    "title": "File:Naturalis Biodiversity Center - RMNH.AVES.110104 - Pinguinus impennis (Linnaeus, 1758) - Great Auk - specimen - lateral view.jpeg",
+    "label": "Great Auk Holotype Specimen",
+    "species": "Pinguinus impennis",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct 1844 (Eldey Island)",
+    "license": "CC BY-SA 3.0",
+    "artist": "Linnaeus, 1758",
+    "category": "avian",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Naturalis_Biodiversity_Center_-_RMNH.AVES.110104_-_Pinguinus_impennis_%28Linnaeus%2C_1758%29_-_Great_Auk_-_specimen_-_lateral_view.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/golden_toad.jpg",
+    "title": "File:Bufo periglenes2.jpg",
+    "label": "Golden Toad (Monteverde Cloud Forest)",
+    "species": "Incilius periglenes",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct 1989 (Costa Rica)",
+    "license": "Public domain",
+    "artist": "Bufo_periglenes1.jpg: Charles H. Smith\nvergrößert von Aglarech\nderivative work Purpy Pupple (talk)",
+    "category": "amphibian",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bufo_periglenes2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/titanoboa_vertebra.jpg",
+    "title": "File:Titanoboa vertebra 1.jpg",
+    "label": "Titanoboa Giant Vertebra Fossil",
+    "species": "Titanoboa cerrejonensis",
+    "dnaStatus": "fossil_only",
+    "era": "Paleocene Epoch (~58 Mya)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Rextron",
+    "category": "reptile",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Titanoboa_vertebra_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/caribbean_monk_seal.jpg",
+    "title": "File:Monachus tropicalis.jpg",
+    "label": "Caribbean Monk Seal Historical Specimen",
+    "species": "Neomonachus tropicalis",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct 1952 (Seranilla Bank)",
+    "license": "Public domain",
+    "artist": "Wikimedia Contributor",
+    "category": "marine",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Monachus_tropicalis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/megalodon_tooth.jpg",
+    "title": "File:Megalodon shark tooth fossil.jpg",
+    "label": "Megalodon Mineralized Serrated Tooth",
+    "species": "Otodus megalodon",
+    "dnaStatus": "fossil_only",
+    "era": "Miocene to Pliocene (~3.6 Mya)",
+    "license": "CC BY-SA 3.0",
+    "artist": "WorldwrestlingfederationVKM",
+    "category": "marine",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/83/Megalodon_shark_tooth_fossil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/ammonite_fossil.jpg",
+    "title": "File:Ammonite fossil.JPG",
+    "label": "Ammonite Siphuncle Shell Fossil",
+    "species": "Ammonoidea sp.",
+    "dnaStatus": "fossil_only",
+    "era": "Extinct 66 Mya (K-Pg Boundary)",
+    "license": "CC BY 3.0",
+    "artist": "Teravolt (talk)",
+    "category": "invertebrate",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Ammonite_fossil.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/xerces_blue.jpg",
+    "title": "File:Xerces Blue.jpg",
+    "label": "Xerces Blue Butterfly Museum Specimen",
+    "species": "Glaucopsyche xerces",
+    "dnaStatus": "ancient_dna",
+    "era": "Extinct 1941 (San Francisco Dunes)",
+    "license": "CC BY-SA 2.0",
+    "artist": "Edward Rooks from San Jose, CA, USA",
+    "category": "invertebrate",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Xerces_Blue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  {
+    "target": "public/media/lost_species/trilobite_fossil.jpg",
+    "title": "File:Elrathia kingii Dyet 2174.jpg",
+    "label": "Elrathia kingii Trilobite Exoskeleton",
+    "species": "Elrathia kingii",
+    "dnaStatus": "fossil_only",
+    "era": "Middle Cambrian (~505 Mya)",
+    "license": "Public domain",
+    "artist": "Dave Dyet http://www.shutterstone.com  http://www.dyet.com",
+    "category": "invertebrate",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Elrathia_kingii_Dyet_2174.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  }
+]

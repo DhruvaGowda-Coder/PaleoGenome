@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #02070d;
+  --foreground: #eef4f8;
+  --ocean-deep: #020813;
+  --ocean-abyss: #01040a;
+  --forest-deep: #051009;
+  --earth-warm: #18140f;
+  --accent-teal: #1ec2a4;
+  --accent-cyan: #38bdf8;
+  --accent-amber: #d99b42;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--foreground);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Documentarian Film Grain & Atmospheric Texture */
+.cinema-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Atmospheric vignette */
+.cinema-vignette {
+  box-shadow: inset 0 0 160px rgba(1, 4, 10, 0.85);
+}
+
+/* Soft Edge Feathering for Realistic Video Integration */
+.cinematic-panel-glow {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(2, 18, 30, 0.78) 0%,
+    rgba(2, 18, 30, 0.62) 43%,
+    rgba(2, 18, 30, 0.3) 68%,
+    rgba(2, 18, 30, 0.08) 84%,
+    transparent 100%
+  );
+  backdrop-filter: blur(1px);
+}
+
+.mask-feather-radial {
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, black 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, black 40%, transparent 95%);
+}
+
+.mask-feather-ambient {
+  mask-image: radial-gradient(ellipse 52% 54% at 50% 50%, #000 18%, rgba(0, 0, 0, 0.78) 48%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 52% 54% at 50% 50%, #000 18%, rgba(0, 0, 0, 0.78) 48%, transparent 100%);
+}
+
+.mask-feather-subject {
+  mask-image: radial-gradient(ellipse 42% 60% at 76% 50%, #000 8%, rgba(0, 0, 0, 0.72) 34%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 42% 60% at 76% 50%, #000 8%, rgba(0, 0, 0, 0.72) 34%, transparent 82%);
+}
+
+.mask-sky-fade {
+  mask-image: linear-gradient(to bottom, #000 0%, #000 48%, rgba(0, 0, 0, 0.7) 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 48%, rgba(0, 0, 0, 0.7) 72%, transparent 100%);
+}
+
+/* Slow documentary-style camera drift on the still forest plate */
+@keyframes forestCameraDrift {
+  0%, 100% { transform: scale(1.045) translate3d(0, 0, 0); }
+  50% { transform: scale(1.09) translate3d(-1.1%, 0.35%, 0); }
+}
+
+.forest-camera-drift {
+  animation: forestCameraDrift 38s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes forestMistDrift {
+  0%, 100% { transform: translate3d(-4%, 0, 0) scaleX(0.96); opacity: 0.12; }
+  50% { transform: translate3d(5%, -3%, 0) scaleX(1.04); opacity: 0.26; }
+}
+
+.forest-mist-drift {
+  background: linear-gradient(105deg, transparent 0%, rgba(198, 216, 194, 0.08) 35%, rgba(213, 224, 208, 0.12) 52%, transparent 100%);
+  filter: blur(30px);
+}
+
+.forest-mist-active {
+  animation: forestMistDrift 24s ease-in-out infinite;
+}
+
+.mask-feather-horizontal {
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.mask-feather-vertical {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.mask-feather-bottom {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.mask-feather-top {
+  mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+}
+
+/* Water horizon waterline split effect */
+.waterline-split {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(30, 194, 164, 0.35) 45%,
+    rgba(6, 26, 48, 0.85) 55%,
+    rgba(2, 8, 19, 0.98) 100%
+  );
+}
+
+/* Underwater Light Ray Caustics Simulation */
+@keyframes causticShift {
+  0% { transform: translateY(0) scaleY(1); opacity: 0.18; }
+  50% { transform: translateY(-8px) scaleY(1.08); opacity: 0.28; }
+  100% { transform: translateY(0) scaleY(1); opacity: 0.18; }
+}
+
+.animate-caustics {
+  animation: causticShift 9s ease-in-out infinite;
+}
+
+/* Gentle water ripple motion */
+@keyframes waterSway {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(0.2deg); }
+}
+
+.animate-water-sway {
+  animation: waterSway 8s ease-in-out infinite;
+}
+
+/* Custom scrollbar matching nature doc dark aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 0px; /* Completely hide horizontal scrollbars */
+}
+::-webkit-scrollbar-track {
+  background: #030811;
+}
+::-webkit-scrollbar-thumb {
+  background: #172d42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1ec2a4;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Delicate, sleek custom horizontal scrollbar (4px slim pill) */
+.subtle-scrollbar::-webkit-scrollbar {
+  display: block !important;
+  height: 4px !important;
+}
+.subtle-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.subtle-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(30, 194, 164, 0.6);
+  border-radius: 9999px;
+}
+.subtle-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #1ec2a4;
+}
+.subtle-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30, 194, 164, 0.6) rgba(255, 255, 255, 0.08);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
