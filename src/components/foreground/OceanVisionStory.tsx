@@ -7,21 +7,21 @@ export function OceanVisionStory() {
   return (
     <section
       id="abyss"
-      className="relative min-h-screen w-full flex flex-col justify-center px-6 sm:px-12 py-24 sm:py-32 bg-transparent z-10 scroll-mt-12"
+      className="relative min-h-[100svh] w-full flex flex-col justify-center px-4 sm:px-12 py-24 sm:py-32 bg-transparent z-10 scroll-mt-12"
     >
       <div id="vision" className="absolute -top-12 left-0" />
       <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row md:items-start justify-between gap-12">
         {/* Story Block */}
-        <div className="relative isolate max-w-2xl p-6 sm:p-8">
+        <div className="relative isolate w-full max-w-2xl p-5 sm:p-8">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -inset-x-24 -inset-y-12 -z-10 rounded-[3rem] cinematic-panel-glow"
+            className="pointer-events-none absolute -inset-x-4 -inset-y-5 sm:-inset-x-24 sm:-inset-y-12 -z-10 rounded-[2rem] sm:rounded-[3rem] cinematic-panel-glow"
           />
           <span className="font-mono text-xs uppercase tracking-[0.28em] text-[#38bdf8] block mb-3">
             The Deep Ocean &amp; The Scientific Vision
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.12]">
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.12] break-words">
             Decoding the ancient memory <br className="hidden sm:inline" />
             of our oceans and planet.
           </h2>

@@ -104,19 +104,19 @@ export function WildernessStory() {
   return (
     <section
       id="wilderness"
-      className="relative min-h-screen w-full flex flex-col justify-center px-6 sm:px-12 py-24 sm:py-32 bg-transparent z-10"
+      className="relative min-h-[100svh] w-full flex flex-col justify-center px-4 sm:px-12 py-24 sm:py-32 bg-transparent z-10"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="relative isolate max-w-2xl p-6 sm:p-8">
+        <div className="relative isolate w-full max-w-2xl p-5 sm:p-8">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -inset-x-24 -inset-y-12 -z-10 rounded-[3rem] cinematic-panel-glow"
+            className="pointer-events-none absolute -inset-x-4 -inset-y-5 sm:-inset-x-24 sm:-inset-y-12 -z-10 rounded-[2rem] sm:rounded-[3rem] cinematic-panel-glow"
           />
           <span className="font-mono text-xs uppercase tracking-[0.28em] text-[#1ec2a4] block mb-3">
             The Living &amp; Ancient Wilderness
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.12]">
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.12] break-words">
             Where living giants meet the lost.
           </h2>
 

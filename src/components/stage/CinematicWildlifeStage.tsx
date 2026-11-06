@@ -16,55 +16,49 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
   const turtleVideoRef = useRef<HTMLVideoElement>(null);
   const dolphinsVideoRef = useRef<HTMLVideoElement>(null);
 
-  // Play/pause and muted autoplay enforcement for seamless browser playback
+  // Keep off-screen scenes as still posters. This prevents mobile browsers from
+  // downloading and decoding every large wildlife clip on the initial page load.
   useEffect(() => {
-    const vids = [
-      birdsVideoRef.current,
-      tigerVideoRef.current,
-      deerVideoRef.current,
-      butterflyVideoRef.current,
-      whalesVideoRef.current,
-      reefVideoRef.current,
-      turtleVideoRef.current,
-      dolphinsVideoRef.current,
+    const videoRefs = [
+      birdsVideoRef,
+      tigerVideoRef,
+      deerVideoRef,
+      butterflyVideoRef,
+      whalesVideoRef,
+      reefVideoRef,
+      turtleVideoRef,
+      dolphinsVideoRef,
     ];
+    const videos = videoRefs.map((ref) => ref.current).filter((video): video is HTMLVideoElement => Boolean(video));
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mobile = window.matchMedia("(max-width: 767px)").matches;
 
-    vids.forEach((v) => {
-      if (v) {
-        v.muted = true;
-        v.defaultMuted = true;
-        v.playsInline = true;
-      }
+    videos.forEach((video) => {
+      video.pause();
+      video.preload = "none";
+      video.removeAttribute("src");
+      video.querySelectorAll("source").forEach((source) => source.removeAttribute("src"));
+      video.load();
     });
 
-    if (currentStage === 0) {
-      birdsVideoRef.current?.play().catch(() => {});
-      tigerVideoRef.current?.pause();
-      deerVideoRef.current?.pause();
-      whalesVideoRef.current?.pause();
-      reefVideoRef.current?.pause();
-      turtleVideoRef.current?.pause();
-      dolphinsVideoRef.current?.pause();
-      butterflyVideoRef.current?.pause();
-    } else if (currentStage === 1) {
-      tigerVideoRef.current?.play().catch(() => {});
-      deerVideoRef.current?.play().catch(() => {});
-      butterflyVideoRef.current?.play().catch(() => {});
-      birdsVideoRef.current?.pause();
-      whalesVideoRef.current?.pause();
-      reefVideoRef.current?.pause();
-      turtleVideoRef.current?.pause();
-      dolphinsVideoRef.current?.pause();
-    } else if (currentStage === 2) {
-      whalesVideoRef.current?.play().catch(() => {});
-      birdsVideoRef.current?.pause();
-      reefVideoRef.current?.play().catch(() => {});
-      turtleVideoRef.current?.play().catch(() => {});
-      dolphinsVideoRef.current?.play().catch(() => {});
-      butterflyVideoRef.current?.pause();
-      tigerVideoRef.current?.pause();
-      deerVideoRef.current?.pause();
-    }
+    if (saveData || reducedMotion) return;
+
+    const stageVideos: Record<number, HTMLVideoElement[]> = {
+      0: [birdsVideoRef.current].filter((video): video is HTMLVideoElement => Boolean(video)),
+      1: [tigerVideoRef.current, ...(mobile ? [] : [deerVideoRef.current, butterflyVideoRef.current])]
+        .filter((video): video is HTMLVideoElement => Boolean(video)),
+      2: [whalesVideoRef.current, ...(mobile ? [] : [reefVideoRef.current, turtleVideoRef.current, dolphinsVideoRef.current])]
+        .filter((video): video is HTMLVideoElement => Boolean(video)),
+    };
+    const activeVideos = stageVideos[currentStage] ?? [];
+
+    activeVideos.forEach((video) => {
+      video.src = video.dataset.src ?? "";
+      video.preload = "metadata";
+      video.load();
+      video.play().catch(() => {});
+    });
   }, [currentStage]);
 
   return (
@@ -84,7 +78,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         {/* Full-bleed African Elephant 4K landscape anchored to the right */}
         <div
           className="absolute inset-0 bg-cover bg-right filter brightness-[1.02] contrast-[1.06] saturate-[1.04]"
-          style={{ backgroundImage: "url('/media/images/african_elephant_4k_richer_herd.png')" }}
+          style={{ backgroundImage: "url('/media/images/african_elephant_4k_richer_herd.webp')" }}
         />
 
         {/* Atmospheric top blend for entrance vibe & seamless navbar integration */}
@@ -100,12 +94,12 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute inset-x-0 top-0 h-[62%] overflow-hidden mask-sky-fade opacity-90 mix-blend-soft-light pointer-events-none">
           <video
             ref={birdsVideoRef}
-            src="/media/videos/birds_flight.webm"
-            autoPlay
+            data-src="/media/videos/birds_flight.webm"
+            poster="/media/images/african_elephant_4k_richer_herd.webp"
             loop
             muted
             playsInline
-            preload="auto"
+            preload="none"
             className="h-full w-full object-cover object-[center_50%] saturate-0 brightness-105 contrast-[1.2]"
           />
         </div>
@@ -129,13 +123,12 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         {/* Full-screen tiger footage fades in beside the copy instead of sitting over it. */}
         <video
           ref={tigerVideoRef}
-          src="/media/videos/tiger_forest_1080.mp4"
+          data-src="/media/videos/tiger_forest_1080.mp4"
           poster="/media/images/tiger_forest_1080_poster.jpg"
-          autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           style={{
             transform: "translateX(2%) scale(1.04)",
             maskImage: "linear-gradient(to right, transparent 0%, transparent 34%, rgba(0,0,0,0.25) 45%, #000 57%)",
@@ -149,13 +142,12 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute top-[31%] right-[-3%] w-[52%] aspect-video overflow-hidden mask-feather-ambient opacity-80 mix-blend-screen pointer-events-none">
           <video
             ref={deerVideoRef}
-            src="/media/videos/deer_herd_1080.mp4"
+            data-src="/media/videos/deer_herd_1080.mp4"
             poster="/media/images/deer_herd_1080_poster.jpg"
-            autoPlay
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             className="h-full w-full object-cover object-center brightness-[0.88] saturate-[0.8] contrast-[1.05]"
           />
         </div>
@@ -176,9 +168,8 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute top-[12%] right-[6%] sm:right-[9%] w-[170px] sm:w-[230px] aspect-video overflow-hidden mask-feather-ambient opacity-75 mix-blend-screen">
           <video
             ref={butterflyVideoRef}
-            src="/media/videos/butterfly_flutter.webm"
+            data-src="/media/videos/butterfly_flutter.webm"
             poster="/media/images/morpho_butterfly.jpg"
-            autoPlay
             loop
             muted
             playsInline
@@ -206,13 +197,12 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute inset-0 overflow-hidden opacity-90">
           <video
             ref={whalesVideoRef}
-            src="/media/videos/humpback_whale_1080.mp4"
+            data-src="/media/videos/humpback_whale_1080.mp4"
             poster="/media/images/humpback_whale_1080_poster.jpg"
-            autoPlay
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             className="w-full h-full -translate-x-[8%] scale-[1.3] object-cover object-center filter brightness-[0.96] contrast-[1.12] saturate-[1.1]"
           />
           {/* Soft vignette to ensure text readability */}
@@ -224,8 +214,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute top-[14%] right-[3%] sm:right-[7%] w-[340px] sm:w-[460px] aspect-video overflow-hidden mask-feather-ambient opacity-85 mix-blend-screen">
           <video
             ref={turtleVideoRef}
-            src="/media/videos/loggerhead_turtle.webm"
-            autoPlay
+            data-src="/media/videos/loggerhead_turtle.webm"
             loop
             muted
             playsInline
@@ -237,13 +226,12 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute top-[52%] left-[2%] sm:left-[8%] md:left-[10%] w-[260px] sm:w-[380px] md:w-[440px] aspect-video overflow-hidden mask-feather-ambient opacity-95">
           <video
             ref={dolphinsVideoRef}
-            src="/media/videos/dolphin_pod_1080.mp4"
+            data-src="/media/videos/dolphin_pod_1080.mp4"
             poster="/media/images/dolphin_pod_1080_poster.jpg"
-            autoPlay
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             className="h-full w-full scale-[1.4] object-cover brightness-100 saturate-100 contrast-[1.25]"
           />
         </div>
@@ -252,9 +240,8 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <div className="absolute bottom-[4%] right-[-4%] sm:right-[1%] w-[420px] sm:w-[560px] md:w-[700px] aspect-video overflow-hidden mask-feather-ambient opacity-50 mix-blend-screen">
           <video
             ref={reefVideoRef}
-            src="/media/videos/coral_reef_fish.webm"
+            data-src="/media/videos/coral_reef_fish.webm"
             poster="/media/images/coral_reef.jpg"
-            autoPlay
             loop
             muted
             playsInline
