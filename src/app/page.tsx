@@ -13,23 +13,31 @@ export default function HomePage() {
 
   // Scroll observer to seamlessly transition the background wildlife stage
   useEffect(() => {
+    let frame = 0;
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        // Use the real section boundaries. The wilderness copy grows taller on
+        // phones, so viewport-count thresholds switched the tiger scene too soon.
+        const transitionPoint = window.scrollY + window.innerHeight * 0.35;
+        const wilderness = document.getElementById("wilderness");
+        const ocean = document.getElementById("abyss");
+        const wildernessTop = wilderness ? wilderness.getBoundingClientRect().top + window.scrollY : window.innerHeight;
+        const oceanTop = ocean ? ocean.getBoundingClientRect().top + window.scrollY : wildernessTop + window.innerHeight;
 
-      // Calculate stage based on scroll depth
-      if (scrollY < windowHeight * 0.7) {
-        setCurrentStage(0); // Stage 0: Sky, soaring birds, savanna elephants, tree frog
-      } else if (scrollY < windowHeight * 1.7) {
-        setCurrentStage(1); // Stage 1: Primordial rainforest, Bengal tiger in grass, Woolly Mammoth, Thylacine, butterfly
-      } else {
-        setCurrentStage(2); // Stage 2: Deep ocean, continuous swimming whales, coral reef fish, Dodo, Sea Cow
-      }
+        setCurrentStage(transitionPoint >= oceanTop ? 2 : transitionPoint >= wildernessTop ? 1 : 0);
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (

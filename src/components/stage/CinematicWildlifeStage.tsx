@@ -32,6 +32,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
     const videos = videoRefs.map((ref) => ref.current).filter((video): video is HTMLVideoElement => Boolean(video));
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mobile = window.matchMedia("(max-width: 767px)").matches;
 
     videos.forEach((video) => {
       video.pause();
@@ -51,13 +52,25 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         .filter((video): video is HTMLVideoElement => Boolean(video)),
     };
     const activeVideos = stageVideos[currentStage] ?? [];
+    const playbackHandlers = new Map<HTMLVideoElement, () => void>();
 
     activeVideos.forEach((video) => {
-      video.src = video.dataset.src ?? "";
+      video.src = (mobile && video.dataset.mobileSrc) || video.dataset.src || "";
       video.preload = "metadata";
+      const startPlayback = () => video.play().catch(() => {});
+      playbackHandlers.set(video, startPlayback);
+      video.addEventListener("canplay", startPlayback, { once: true });
       video.load();
-      video.play().catch(() => {});
+      startPlayback();
     });
+
+    return () => {
+      activeVideos.forEach((video) => {
+        video.pause();
+        const handler = playbackHandlers.get(video);
+        if (handler) video.removeEventListener("canplay", handler);
+      });
+    };
   }, [currentStage]);
 
   return (
@@ -94,6 +107,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={birdsVideoRef}
             data-src="/media/videos/birds_flight.webm"
+            data-mobile-src="/media/videos/birds_flight_mobile.mp4"
             poster="/media/images/african_elephant_4k_richer_herd.webp"
             autoPlay
             loop
@@ -124,6 +138,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <video
           ref={tigerVideoRef}
           data-src="/media/videos/tiger_forest_1080.mp4"
+          data-mobile-src="/media/videos/tiger_forest_1080_mobile.mp4"
           poster="/media/images/tiger_forest_1080_poster.jpg"
           autoPlay
           loop
@@ -144,6 +159,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={deerVideoRef}
             data-src="/media/videos/deer_herd_1080.mp4"
+            data-mobile-src="/media/videos/deer_herd_1080_mobile.mp4"
             poster="/media/images/deer_herd_1080_poster.jpg"
             autoPlay
             loop
@@ -171,6 +187,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={butterflyVideoRef}
             data-src="/media/videos/butterfly_flutter.webm"
+            data-mobile-src="/media/videos/butterfly_flutter_mobile.mp4"
             poster="/media/images/morpho_butterfly.jpg"
             autoPlay
             loop
@@ -201,6 +218,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={whalesVideoRef}
             data-src="/media/videos/humpback_whale_1080.mp4"
+            data-mobile-src="/media/videos/humpback_whale_1080_mobile.mp4"
             poster="/media/images/humpback_whale_1080_poster.jpg"
             autoPlay
             loop
@@ -219,6 +237,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={turtleVideoRef}
             data-src="/media/videos/loggerhead_turtle.webm"
+            data-mobile-src="/media/videos/loggerhead_turtle_mobile.mp4"
             autoPlay
             loop
             muted
@@ -232,6 +251,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={dolphinsVideoRef}
             data-src="/media/videos/dolphin_pod_1080.mp4"
+            data-mobile-src="/media/videos/dolphin_pod_1080_mobile.mp4"
             poster="/media/images/dolphin_pod_1080_poster.jpg"
             autoPlay
             loop
@@ -247,6 +267,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={reefVideoRef}
             data-src="/media/videos/coral_reef_fish.webm"
+            data-mobile-src="/media/videos/coral_reef_fish_mobile.mp4"
             poster="/media/images/coral_reef.jpg"
             autoPlay
             loop
