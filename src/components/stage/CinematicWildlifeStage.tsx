@@ -96,9 +96,10 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           currentStage === 0 ? "opacity-100" : "opacity-0"
         }`}
       >
-        {/* Full-bleed African Elephant 4K landscape anchored to the right */}
+        {/* Keep the elephant herd in the narrow mobile crop; preserve the
+            established right-anchored desktop composition. */}
         <div
-          className="absolute inset-0 bg-cover bg-right filter brightness-[1.02] contrast-[1.06] saturate-[1.04]"
+          className="absolute inset-0 bg-cover bg-left md:bg-right filter brightness-[1.02] contrast-[1.06] saturate-[1.04]"
           style={{ backgroundImage: "url('/media/images/african_elephant_4k_richer_herd.webp')" }}
         />
 
