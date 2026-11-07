@@ -31,7 +31,6 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
     ];
     const videos = videoRefs.map((ref) => ref.current).filter((video): video is HTMLVideoElement => Boolean(video));
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const mobile = window.matchMedia("(max-width: 767px)").matches;
 
     videos.forEach((video) => {
@@ -42,7 +41,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
       video.load();
     });
 
-    if (saveData || reducedMotion) return;
+    if (saveData) return;
 
     const stageVideos: Record<number, HTMLVideoElement[]> = {
       0: [birdsVideoRef.current].filter((video): video is HTMLVideoElement => Boolean(video)),
