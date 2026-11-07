@@ -33,16 +33,6 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     const mobile = window.matchMedia("(max-width: 767px)").matches;
 
-    videos.forEach((video) => {
-      video.pause();
-      video.preload = "none";
-      video.removeAttribute("src");
-      video.querySelectorAll("source").forEach((source) => source.removeAttribute("src"));
-      video.load();
-    });
-
-    if (saveData) return;
-
     const stageVideos: Record<number, HTMLVideoElement[]> = {
       0: [birdsVideoRef.current].filter((video): video is HTMLVideoElement => Boolean(video)),
       1: [tigerVideoRef.current, deerVideoRef.current, butterflyVideoRef.current]
@@ -52,14 +42,34 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
     };
     const activeVideos = stageVideos[currentStage] ?? [];
     const playbackHandlers = new Map<HTMLVideoElement, () => void>();
+    const activeSet = new Set(activeVideos);
+
+    videos.forEach((video) => {
+      if (!activeSet.has(video)) {
+        video.pause();
+        video.preload = "none";
+      }
+    });
+
+    if (saveData) {
+      activeVideos.forEach((video) => video.pause());
+      return;
+    }
 
     activeVideos.forEach((video) => {
-      video.src = (mobile && video.dataset.mobileSrc) || video.dataset.src || "";
-      video.preload = "metadata";
+      const desiredSource = (mobile && video.dataset.mobileSrc)
+        || (!mobile && video.dataset.desktopSrc)
+        || video.dataset.src
+        || "";
+      video.preload = "auto";
       const startPlayback = () => video.play().catch(() => {});
       playbackHandlers.set(video, startPlayback);
       video.addEventListener("canplay", startPlayback, { once: true });
-      video.load();
+      if (video.dataset.activeSrc !== desiredSource) {
+        video.dataset.activeSrc = desiredSource;
+        video.src = desiredSource;
+        video.load();
+      }
       startPlayback();
     });
 
@@ -106,6 +116,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
           <video
             ref={birdsVideoRef}
             data-src="/media/videos/birds_flight.webm"
+            data-desktop-src="/media/videos/birds_flight_desktop.mp4"
             data-mobile-src="/media/videos/birds_flight_mobile.mp4"
             poster="/media/images/african_elephant_4k_richer_herd.webp"
             autoPlay
@@ -137,6 +148,7 @@ export function CinematicWildlifeStage({ currentStage }: CinematicWildlifeStageP
         <video
           ref={tigerVideoRef}
           data-src="/media/videos/tiger_forest_1080.mp4"
+          data-desktop-src="/media/videos/tiger_forest_1080_desktop.mp4"
           data-mobile-src="/media/videos/tiger_forest_1080_mobile.mp4"
           poster="/media/images/tiger_forest_1080_poster.jpg"
           autoPlay
